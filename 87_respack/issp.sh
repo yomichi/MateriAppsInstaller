@@ -27,6 +27,9 @@ check cmake -DCMAKE_INSTALL_PREFIX=${PREFIX} -DCONFIG=sekirei ../
 check make | tee -a $LOG
 echo "[make install]" | tee -a $LOG
 check make install | tee -a $LOG
+mkdir -p ${PREFIX}/tool
+echo "cp ../util/transfer_analysis/tr.py ${PREFIX}/tool"
+cp ../util/transfer_analysis/tr.py ${PREFIX}/tool
 echo "cp -r sample ${PREFIX}" | tee -a $LOG
 cp -r ../sample ${PREFIX}
 
