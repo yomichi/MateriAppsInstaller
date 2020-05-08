@@ -35,10 +35,9 @@ ABICSVARS_SH=${PREFIX_APPS}/abics/abicsvars-${ABICS_VERSION}-${ABICS_MA_REVISION
 cat << EOF > ${BUILD_DIR}/abicsvars.sh
 # abics $(basename $0 .sh) ${ABICS_VERSION} ${ABICS_MA_REVISION} $(date +%Y%m%d-%H%M%S)
 . ${PREFIX_TOOL}/env.sh
-. $TRIQSVARS
 export ABICS_ROOT=$PREFIX
 export PATH=\${ABICS_ROOT}/bin:\$PATH
-export PYTHONPATH=\${ABICS_ROOT}/lib/python${PYTHONVERSION}:\$PYTHONPATH
+export PYTHONPATH=\${ABICS_ROOT}/lib/python${PYTHONVERSION}/site-packages:\$PYTHONPATH
 EOF
 rm -f $ABICSVARS_SH
 cp -f ${BUILD_DIR}/abicsvars.sh $ABICSVARS_SH
